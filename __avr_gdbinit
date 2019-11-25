@@ -1,0 +1,7 @@
+define reset
+SIGNAL SIGHUP
+end
+file obj-m1281/sd2iec.elf
+target remote localhost:4242
+load
+break main
