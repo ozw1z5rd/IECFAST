@@ -243,7 +243,8 @@ CFLAGS = -g$(DEBUG)
 CFLAGS += $(CDEFS) $(CINCS)
 CFLAGS += -O$(OPT)
 CFLAGS += -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
-CFLAGS += -Wall -Wstrict-prototypes -Werror
+CFLAGS += -Wall -Wstrict-prototypes 
+# DEBUG -Werror
 #CFLAGS += -Wa,-adhlns=$(OBJDIR)/$(<:.c=.lst)
 CFLAGS += -I$(OBJDIR)
 CFLAGS += $(patsubst %,-I%,$(EXTRAINCDIRS))
@@ -254,7 +255,8 @@ CFLAGS += -ffunction-sections -fdata-sections
 # these are needed for GCC 4.3.2, which is more aggressive at inlining
 # gcc-4.2 knows one of those, but it tends to increase code size
 ifeq ($(shell $(CC) --version|gawk -f gcctest.awk),YES)
-CFLAGS += --param inline-call-cost=3
+# DEBUG CFLAGS += --param inline-call-cost=3
+CFLAGS += -Wno-deprecated-declarations -D__PROG_TYPES_COMPAT__
 CFLAGS += -fno-inline-small-functions
 CFLAGS += -fno-move-loop-invariants
 CFLAGS += -fno-split-wide-types
