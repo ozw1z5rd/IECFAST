@@ -13,9 +13,21 @@ $ git clone https://github.com/ozw1z5rd/IECFAST.git
 $ cd IECFAST
 $ make
 ```
+Once the compilation completes, you will find all inside the `obj-m1281` folder:
 
+```
+$ cd obj-m1281
+$ ls | grep -v '.o' 
+crc7asm.lst
+sd2iec.bin
+sd2iec.elf
+sd2iec.hex
+sd2iec.lss
+sd2iec.map
+uIEC-firmware-0.8.291.bin
+```
 
-## original readme
+## Original readme
 
 sd2iec - a controller/interface adapting storage devices to the CBM serial bus
 Copyright (C) 2007-2009  Ingo Korb <ingo@akana.de>
