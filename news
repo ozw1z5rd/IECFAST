@@ -1,3 +1,9 @@
+Asynchronous subscription example
+2019-12-20 - Update code and makefile, now compiler on nowsdays Linux distribution, 
+        - move the code on git
+        - now compiles raspberry using the AVR toolchain, original source code 
+          were from DOS
+
 2009-xx-xx - release x.x.x
         - Remove XC command
         - New fastloader: ULoad Model 3
